@@ -116,3 +116,9 @@ earthengine-service-account.json
 *.json.key
 
 node_modules/
+.env*
+!.env.example
+!.env.template
+earthengine-service-account.json
+*-service-account.json
+*.zip

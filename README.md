@@ -21,9 +21,9 @@ The app is designed for a judge to understand in under three minutes. Select Mee
 | Leaf screening | Vertex AI multimodal + curated fallback | Upload a JPG/PNG/WebP image for conservative structured screening; curated demo remains available when Vertex is unavailable |
 | English/Hindi readiness | Implemented | Language toggle updates the main farmer-facing interface copy |
 | Interoperability | Implemented as architecture panel | Shows crop calendars, language packs, soil thresholds, and approved rules as state-specific layers |
-| Earth Engine / NDVI | Implemented as optional live adapter | Computes a point NDVI from Sentinel-2 through the Earth Engine SDK when enabled; clearly labelled cached fallback otherwise |
-| Cloud Storage leaf persistence | Implemented as optional server-side upload | Private object upload with short-lived V4 signed URL; screening continues if the bucket is unavailable |
-| BigQuery telemetry | Implemented as optional non-blocking writer | Streams non-identifying advisory provenance to a configured dataset/table; advisory generation never depends on telemetry success |
+| Earth Engine / NDVI | Configured live adapter | Computes point NDVI from Sentinel-2 through the Earth Engine SDK; the interface labels a cached fallback if a request is unavailable |
+| Cloud Storage leaf persistence | Configured server-side upload | Stores leaf images as private objects and uses short-lived signed reads; the screening response remains available if storage has a request-level failure |
+| BigQuery telemetry | Configured non-blocking writer | Writes non-identifying advisory provenance to the configured dataset/table without blocking the farmer response |
 | Speech, Translation, Maps | Not enabled in the stable demo path | Add only when the corresponding judged user journey is implemented and tested |
 
 The project intentionally does **not** claim to use every Google Cloud service listed on the event page. A service-count checklist is less valuable than a reliable end-to-end farmer experience. This release uses direct Vertex AI for structured text advisory and multimodal leaf screening, Cloud Run-compatible full-stack architecture, and configured Earth Engine, Cloud Storage, and BigQuery adapters. Each adapter exposes a transparent status so a request-level failure is visible rather than misrepresented.
@@ -47,11 +47,11 @@ tRPC procedure: advisory.generate
           +--> state-model configuration concept
           |       crop calendars, language packs, thresholds, approved rules
           |
-          +--> optional Google Earth Engine Sentinel-2 NDVI
-          |       \\-> cached NDVI fallback when disabled/unavailable
-          |
-          +--> optional Cloud Storage leaf persistence
-          |       \\-> request-scoped image handling when bucket is absent
+          +--> Google Earth Engine Sentinel-2 NDVI
+          |        \-> clearly labelled cached NDVI fallback when unavailable
+          |       
+          +--> private Cloud Storage leaf persistence
+          |        \-> request-scoped handling only if the storage request fails
           |
           +--> configured BigQuery advisory telemetry
           |       \\-> non-blocking write; status returned to UI
@@ -84,7 +84,7 @@ The prefilled profiles are deliberately included for repeatable judging. They ar
 
 ## Environment variables
 
-The repository must not contain real secrets. Use the project’s secret manager or your deployment platform for production values.
+This repository contains no credentials. Local secrets and service-account files must remain outside Git. Use the project’s secret manager or your deployment platform for production values.
 
 | Variable | Required | Purpose |
 |---|---:|---|
@@ -136,7 +136,7 @@ gcloud run services update agrisense-ai \
 
 For a direct Vertex AI integration, also enable `aiplatform.googleapis.com`, attach a runtime service account, and grant only the Vertex AI invocation role required by the service. Local Application Default Credentials do not transfer into Cloud Run. The direct Google Cloud adapter is kept behind one server function so the farmer UI remains independent of provider-specific details.
 
-Earth Engine, Cloud Storage, and BigQuery are now implemented as optional adapters. Follow the exact commands in `SETUP_LOCAL.md` to register Earth Engine, create the private bucket and lifecycle rule, create the BigQuery table, and grant least-privilege permissions. The UI reports `live`, `fallback`, `configured`, `disabled`, and telemetry status values so a judge can distinguish a working adapter from a safe local fallback. Speech, Translation, Maps, and Dialogflow remain future extensions until they have a user journey, language QA, and a testable fallback.
+Earth Engine, Cloud Storage, and BigQuery are implemented as server-side adapters with explicit status labels and safe request-level fallbacks.Follow the exact commands in `SETUP_LOCAL.md` to register Earth Engine, create the private bucket and lifecycle rule, create the BigQuery table, and grant least-privilege permissions. The UI reports `live`, `fallback`, `configured`, `disabled`, and telemetry status values so a judge can distinguish a working adapter from a safe local fallback. Speech, Translation, Maps, and Dialogflow remain future extensions until they have a user journey, language QA, and a testable fallback.
 
 ## Testing and validation
 

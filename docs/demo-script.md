@@ -65,7 +65,7 @@ Click **Continue to scale readiness**.
 
 **Say:**
 
-> The Google Cloud data plane is part of the configured implementation, not a future mock. Earth Engine supplies the satellite context, Cloud Storage keeps leaf objects private, and BigQuery receives non-identifying provenance. The UI exposes the status of each adapter so a judge can distinguish a live path from a failed request instead of trusting an unlabelled number.
+> The Google Cloud services are connected on the server side. The interface shows whether each request is live, unavailable, or using a safe fallback. Earth Engine supplies the satellite context, Cloud Storage keeps leaf objects private, and BigQuery receives non-identifying provenance. The UI exposes the status of each adapter so a judge can distinguish a live path from a failed request instead of trusting an unlabelled number.
 
 ## 3:40–4:10 — Reach and responsibility
 
@@ -77,7 +77,7 @@ Click **Continue to scale readiness**.
 
 ## Closing line
 
-> Agrisense turns fragmented field signals into a clearer next decision, with Google Cloud execution, explicit provenance, conservative screening, and a deployment path that can move from one district to many communities.
+> Agrisense brings the main field signals into one place and helps the farmer decide what to check or do next. The same setup can be extended to more crops, districts, and state-specific rules.
 
 ## Recording checklist
 

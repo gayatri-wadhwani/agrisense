@@ -27,7 +27,7 @@ Agrisense is currently a **Google Cloud-powered, interoperable agricultural advi
 
 ## What is implemented now
 
-The strongest demonstrated path is: select an Indian farmer profile; fetch live or cached weather context; generate a structured Vertex AI advisory; inspect NDVI and provenance status; screen a leaf image conservatively with Vertex AI multimodal reasoning; optionally persist the image to Cloud Storage; optionally write advisory provenance to BigQuery; and switch the interface between English and Hindi. The UI explicitly labels live, fallback, disabled, and configured states.
+The strongest demonstrated path is: select an Indian farmer profile; fetch live or cached weather context; generate a structured Vertex AI advisory; inspect NDVI and provenance status; screen a leaf image conservatively with Vertex AI multimodal reasoning; persist the image to private Cloud Storage and write non-identifying advisory provenance to BigQuery; and switch the interface between English and Hindi. The UI explicitly labels live, fallback, disabled, and configured states.The deployed project is configured for these services. If an individual request fails, the UI shows a labelled fallback or failure status.
 
 ## What requires user-owned GCP activation
 
