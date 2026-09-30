@@ -1,0 +1,29 @@
+# Agrisense environment template
+# Copy this file to .env for local use only. Never commit .env or credentials.
+
+AGRISENSE_AI_PROVIDER=vertex
+AGRISENSE_REQUIRE_VERTEX=true
+GOOGLE_CLOUD_PROJECT=agrisense-506317
+GOOGLE_CLOUD_LOCATION=asia-south1
+AGRISENSE_VERTEX_MODEL=gemini-2.5-flash
+
+WEATHER_API_BASE_URL=https://api.open-meteo.com/v1/forecast
+AGRISENSE_DEFAULT_LANGUAGE=en
+VITE_APP_TITLE=Agrisense
+
+# Earth Engine: provide the JSON only through a local environment or Secret Manager.
+AGRISENSE_EARTH_ENGINE_ENABLED=true
+EARTH_ENGINE_SERVICE_ACCOUNT_JSON=
+EARTH_ENGINE_DATE_START=2026-06-01
+EARTH_ENGINE_DATE_END=2026-09-30
+EARTH_ENGINE_MAX_CLOUD_PERCENT=50
+
+# Private Cloud Storage leaf persistence.
+AGRISENSE_GCS_BUCKET=agrisense-leaves-506317
+AGRISENSE_GCS_SIGNED_URL_MINUTES=30
+
+# Non-identifying BigQuery advisory telemetry.
+AGRISENSE_BQ_DATASET=agrisense_telemetry
+AGRISENSE_BQ_TABLE=advisory_events
+
+# PORT is supplied by local tooling or Cloud Run. NODE_ENV is set by package scripts.

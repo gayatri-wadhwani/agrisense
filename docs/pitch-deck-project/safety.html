@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Safety by Design</title>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .slide-container { width: 1280px; min-height: 720px; background: #f0f4f8; color: #102a43; font-family: Arial, Helvetica, sans-serif; position: relative; }
+    .content { padding: 64px 74px 0; }
+    .kicker { font-size: 15px; letter-spacing: 3px; text-transform: uppercase; color: #6b7f38; font-weight: 700; }
+    .rule { display: inline-block; width: 42px; height: 3px; background: #d97706; margin: 0 12px 4px 0; }
+    .title { font-size: 60px; line-height: 1.05; letter-spacing: -2px; max-width: 600px; margin: 72px 0 22px; }
+    .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 40px; }
+    .philosophy { font-size: 24px; line-height: 1.4; color: #334e68; }
+    .philosophy strong { color: #d97706; display: block; margin-bottom: 15px; font-size: 28px; }
+    .guardrails { border-left: 2px solid #6b7f38; padding-left: 40px; }
+    .guardrail-item { margin-bottom: 35px; }
+    .guardrail-item h3 { font-size: 24px; margin: 0 0 8px 0; color: #102a43; }
+    .guardrail-item p { font-size: 18px; line-height: 1.4; color: #627d98; margin: 0; }
+    .footer { position: absolute; left: 74px; right: 74px; bottom: 40px; border-top: 1px solid #c9d4df; padding-top: 14px; display: flex; justify-content: space-between; color: #627d98; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="content">
+        <div class="kicker"><span class="rule"></span>07 / Safety by design</div>
+        <div class="title">Decision support, not a diagnosis engine.</div>
+        <div class="main-grid">
+            <div class="philosophy">
+                <strong>Safety is not a feature; it is the foundation.</strong>
+                Agrisense is designed to provide field intelligence that empowers farmers to consult experts, rather than replacing them with unverified AI certainty.
+            </div>
+            <div class="guardrails">
+                <div class="guardrail-item">
+                    <h3>Confidence Framing</h3>
+                    <p>Every AI insight is presented with explicit confidence levels and "possible issue" language to prevent over-reliance.</p>
+                </div>
+                <div class="guardrail-item">
+                    <h3>Referral Guidance</h3>
+                    <p>Immediate actions always include a recommendation to verify findings with local agricultural officers or experts.</p>
+                </div>
+                <div class="guardrail-item">
+                    <h3>No Unsafe Certainty</h3>
+                    <p>The system strictly avoids definitive disease claims and unsafe pesticide prescriptions or dosages.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span>Agrisense · Responsible AI Framework</span>
+        <span>07 / 10</span>
+    </div>
+</div>
+</body>
+</html>

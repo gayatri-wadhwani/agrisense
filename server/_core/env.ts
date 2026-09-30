@@ -1,0 +1,18 @@
+export const ENV = {
+  weatherApiBaseUrl: process.env.WEATHER_API_BASE_URL ?? "https://api.open-meteo.com/v1/forecast",
+  defaultLanguage: process.env.AGRISENSE_DEFAULT_LANGUAGE === "hi" ? "hi" : "en",
+  googleCloudProject: process.env.GOOGLE_CLOUD_PROJECT ?? "",
+  googleCloudLocation: process.env.GOOGLE_CLOUD_LOCATION ?? "asia-south1",
+  vertexModel: process.env.AGRISENSE_VERTEX_MODEL ?? "gemini-2.5-flash",
+  aiProvider: process.env.AGRISENSE_AI_PROVIDER ?? "vertex",
+  requireVertex: process.env.AGRISENSE_REQUIRE_VERTEX === "true",
+  earthEngineEnabled: process.env.AGRISENSE_EARTH_ENGINE_ENABLED === "true",
+  earthEngineServiceAccountJson: process.env.EARTH_ENGINE_SERVICE_ACCOUNT_JSON ?? "",
+  earthEngineDateStart: process.env.EARTH_ENGINE_DATE_START ?? "2026-06-01",
+  earthEngineDateEnd: process.env.EARTH_ENGINE_DATE_END ?? "2026-09-30",
+  earthEngineMaxCloudPercent: Number(process.env.EARTH_ENGINE_MAX_CLOUD_PERCENT ?? "50"),
+  cloudStorageBucket: process.env.AGRISENSE_GCS_BUCKET ?? "",
+  cloudStorageSignedUrlMinutes: Number(process.env.AGRISENSE_GCS_SIGNED_URL_MINUTES ?? "30"),
+  bigQueryDataset: process.env.AGRISENSE_BQ_DATASET ?? "",
+  bigQueryTable: process.env.AGRISENSE_BQ_TABLE ?? "advisory_events",
+};

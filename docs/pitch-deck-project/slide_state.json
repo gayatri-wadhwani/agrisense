@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "title": "Agrisense",
+    "created": 1787426114.195,
+    "last_updated": 1787427950.652,
+    "total_slides": 10
+  },
+  "slides": [
+    {
+      "id": "title",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "problem",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "users",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "solution",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "google_ai",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "provenance",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "safety",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "reach",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "deployability",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "demo_next",
+      "state": "edited",
+      "pageNum": 10
+    }
+  ],
+  "outline": [
+    {
+      "id": "title",
+      "title": "Agrisense",
+      "summary": "Introduce Agrisense as a Google Cloud-powered farmer advisory workspace for safer, weather-aware regenerative decisions.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "problem",
+      "title": "The problem",
+      "summary": "Show the fragmented-information problem facing small and marginal farmers and the need for localised, actionable guidance.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "users",
+      "title": "Who we serve",
+      "summary": "Define the farmer and field-facilitator audience and demonstrate India-specific profiles with state-configurable models.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "solution",
+      "title": "The solution",
+      "summary": "Explain the intake-to-field-brief workflow using crop, soil, weather, and plant-health context.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "google_ai",
+      "title": "Meaningful Google AI",
+      "summary": "Show direct Vertex AI Gemini structured generation and multimodal leaf screening with safe fallback behavior.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "provenance",
+      "title": "Data and provenance",
+      "summary": "Explain live weather, cached satellite context, and transparent state/rules/language/provider metadata.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "safety",
+      "title": "Safety by design",
+      "summary": "Present confidence framing, possible-issue wording, referrals, and avoidance of unsafe pesticide certainty.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "reach",
+      "title": "Interoperability and India-scale reach",
+      "summary": "Show how state adapters and shared platform contracts support expansion across India and future BRICS contexts.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "deployability",
+      "title": "Deployability",
+      "summary": "Describe the stateless Cloud Run architecture, reproducible setup, tests, environment separation, and pilot path.",
+      "image_plan": "Use a suitable image if needed"
+    },
+    {
+      "id": "demo_next",
+      "title": "Demo and next steps",
+      "summary": "Close with the end-to-end judge demo sequence and clearly labelled next integrations.",
+      "image_plan": "Use a suitable image if needed"
+    }
+  ]
+}

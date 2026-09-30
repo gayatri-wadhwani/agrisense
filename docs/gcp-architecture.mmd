@@ -1,0 +1,34 @@
+flowchart TB
+  farmer["Farmer / Field Facilitator\nReact 19 + Tailwind 4\nEnglish + Hindi · Marathi ready for review"]
+  run["Google Cloud Run boundary\nExpress 4 + tRPC 11\nStateless Node.js service"]
+  payload["Sanitized advisory payload\nsource labels · confidence · assumptions\nstate/rules/language provenance · no secrets"]
+  vertex["Vertex AI\nGemini structured advisory\nGemini multimodal leaf screening"]
+  gee["Google Earth Engine\nSentinel-2 point NDVI\nOptional live path + cached fallback"]
+  weather["Open-Meteo\nLive weather context\nCached fallback"]
+  gcs["Cloud Storage\nPrivate leaf-image persistence\nShort-lived signed read + lifecycle cleanup"]
+  bq["BigQuery\nNon-identifying advisory provenance\nNon-blocking telemetry writer"]
+  state["Shared state-model registry\nCrop calendars · soil thresholds\nApproved rules · language packs\nGovernance + version metadata"]
+  future["Future scope\nCloud Text-to-Speech / Translation\nAgmarknet mandi prices after validated adapter"]
+
+  farmer --> run
+  run --> vertex
+  run --> gee
+  run --> weather
+  run --> state
+  vertex --> payload
+  gee --> payload
+  weather --> payload
+  state --> payload
+  payload --> gcs
+  payload --> bq
+  payload --> run
+  future -. planned extension .-> run
+
+  classDef touch fill:#eaf1de,stroke:#789c32,color:#173b29,stroke-width:2px;
+  classDef cloud fill:#e8f0fe,stroke:#4285f4,color:#174ea6,stroke-width:2px;
+  classDef data fill:#fef7e0,stroke:#f9ab00,color:#7a4f01,stroke-width:2px;
+  classDef future fill:#f1f3f4,stroke:#80868b,color:#3c4043,stroke-dasharray: 5 5;
+  class farmer touch;
+  class run,vertex,gee,gcs,bq cloud;
+  class payload,weather,state data;
+  class future future;
